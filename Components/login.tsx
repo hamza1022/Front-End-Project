@@ -40,8 +40,11 @@ const Login = () => {
      })
     .then(function (response){
       if(response.status === 200){
+        console.log(response.data.user)
+        const role = response.data.user.systemRole;
+
        let token = response.data.token ;
-        dispatch(saveUserInfo({...data,token:token}))
+        dispatch(saveUserInfo({...data,token:token,Role:role }))
       
         console.log(response.data.token)
         cookie.set('token', response.data.token)

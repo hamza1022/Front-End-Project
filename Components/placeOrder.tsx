@@ -24,6 +24,8 @@ const placeOrder = () => {
        
     const shippingAddress  = useSelector((state :RootState) => state.userCart.Address)  
     const payment = useSelector((state :RootState) => state.userCart.paymentMethod)
+    const user = useSelector((state :RootState)=> state.userCart.UserInfo)
+    const userName = user.userName;
 
     interface cartType {
         id : number,
@@ -83,7 +85,7 @@ const placeOrder = () => {
                 progress: undefined,
                 theme: "light",
                 });
-            dispatch(saveOrderDetails({...shippingAddress, orderId : orderId + "" ,  itemPrice:itemPrice, shippingPrice:shippingPrice , taxPrice:taxPrice , totalPrice:totalPrice,orderItems:cartItems, paymentMethod:payment, totalQuantity :totalQuantity }))
+            dispatch(saveOrderDetails({...shippingAddress, orderId : orderId + "" ,  totalAmount:itemPrice, shippingPrice:shippingPrice , taxPrice:taxPrice , totalPrice:totalPrice,orderItems:cartItems, paymentMethod:payment, totalQuantity :totalQuantity }))
             setLoading(false)
             // dispatch(clearCart())
             router.push(`/orders/${orderId}`)

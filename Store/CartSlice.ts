@@ -29,7 +29,8 @@ type cartType = {
  type userType = {
 
     userName :string,
-    password : string
+    password : string,
+    Role:string
  }
   type detailType = {
     fullName:string,
@@ -39,9 +40,11 @@ type cartType = {
     phoneNumber:string,
     country:string,
     orderId:string,
+    user:string,
     itemPrice:number,
     shippingPrice:number,
     taxPrice:number,
+    status:string,
     totalPrice:number,
     paymentMethod :string ,
     totalQuantity : number,
@@ -70,7 +73,7 @@ type cartType = {
     payment:string,
     user:string,
     orderID:string,
-    Total:number,
+    TotalAmount:number,
     Address : addressType
     purchaseItems :[
         {
@@ -103,19 +106,7 @@ type initialStateType = {
 }
 
 const initialState:initialStateType = {
-    cartItems: [{
-        id : 0,
-        name : "" ,
-        slug : "",
-        img : "",
-        quantity : 0,
-        InStock : 0 ,
-        price : 0,
-        numReviews : 0 ,
-        brand : "" ,
-        description : "",
-        catergory : "",
-        rating : 0,}],
+    cartItems: [],
 
     Address : {
     fullName : "",
@@ -132,74 +123,8 @@ const initialState:initialStateType = {
 
     },
     paymentMethod:"",
-    orderDetails:[{
-        fullName:"",
-    address:"",
-    city:"",
-    postalCode:"",
-    phoneNumber:"",
-    country:"",
-    orderId:"",
-    itemPrice:0,
-    shippingPrice:0,
-    taxPrice:0,
-    totalPrice:0,
-    totalQuantity : 0,
-    paymentMethod :"",
-    orderItems : [
-        {
-            id : 0,
-        name : "" ,
-        slug : "",
-        img : "",
-        quantity : 0,
-        InStock : 0 ,
-        price : 0,
-        numReviews : 0 ,
-        brand : "" ,
-        description : "",
-        catergory : "",
-        rating : 0,
-
-    }]
-}
-],
-    confirmOrders:[ {
-        status:"",
-    payment:"",
-    user:"",
-    orderID:"",
-    Total:0,
-    Address : {
-        fullName : "",
-        address :"" ,
-        city :"" ,
-        postalCode : "" ,
-        phoneNumber : "" ,
-        country : ""
-
-    } ,
-    purchaseItems :[
-        {
-
-            id : 0,
-            name : "" ,
-            slug : "",
-            img : "",
-            quantity : 0,
-            InStock : 0 ,
-            price : 0,
-            numReviews : 0 ,
-            brand : "" ,
-            description : "",
-            catergory : "",
-            rating : 0,
-
-        }
-    ]
-
-
-    }]
+    orderDetails:[],
+    confirmOrders:[]
 };
 
 
@@ -210,39 +135,7 @@ export const Cartslice = createSlice({
 
     reducers: {
         addtocart(state, action) {
-            // const product = data.products.find((item)=>item.id === action.payload.id)
-            // console.log(product)
-            // const itemIndex = state.cartItems.findIndex((item) => item.id === action.payload.id);
-            // console.log(itemIndex)
-            // if(itemIndex >= 0 ){
-            //     state.cartItems[itemIndex].quantity +=1
-            // }
-            // else {
-            //     state.cartItems.push(action.payload)
-
-            // }
-            // const a = state.cartItems[itemIndex].quantity += 1
-            // state.cartItems.push(a)
-
-
-            // console.log(itemIndex)
-
-            // if (itemIndex) {
-            //     state.cartItems.map((item)=> item.id === action.payload.id ? action.payload : item)
-                
-            // }
-            // else{
-
-            //     state.cartItems.push(action.payload)
-            //     const newQty = state.cartItems[itemIndex].quantity + action.payload.quantity;
-            //     if (newQty > product.InStock) {
-            //         state.cartItems[itemIndex].quantity = product.InStock  
-            //     }
-            //     else{
-            //         state.cartItems[itemIndex].quantity += action.payload.quantity
-            //     }
-                
-            // }
+          
 
 
             const itemIndex = state.cartItems.findIndex((item) => item.id === action.payload.id)
@@ -268,6 +161,8 @@ export const Cartslice = createSlice({
         saveUserInfo(state,action){
                 state.UserInfo =  action.payload
             }, 
+
+
             logOut(state){
                 state.UserInfo={
                     userName:"",
@@ -291,20 +186,21 @@ export const Cartslice = createSlice({
             saveOrderDetails(state,action){
                 state.orderDetails.push(action.payload)
             },
-            clearCart(state){
-                state.cartItems= [];
-            },
+           
             saveConfirmOrders(state,action){
                 state.confirmOrders.push(action.payload)
 
 
-            }
+            },
+            clearCart(state,action){
+                state.cartItems= [];
+            },
         
 
     }
 
 });
 
-export const { addtocart, removetocart, saveShipping ,saveUserInfo,logOut,savePayment,saveOrderDetails,clearCart,saveConfirmOrders } = Cartslice.actions
+export const { addtocart, removetocart, saveShipping ,saveUserInfo,logOut,savePayment,saveOrderDetails,saveConfirmOrders,clearCart } = Cartslice.actions
 export default Cartslice.reducer
 

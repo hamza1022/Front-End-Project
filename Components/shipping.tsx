@@ -15,7 +15,6 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const Shipping = () => {
-
   interface dataType {
     fullName : string,
     address : string,

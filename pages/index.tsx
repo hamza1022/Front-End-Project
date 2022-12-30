@@ -23,7 +23,7 @@ export default function Home() {
           <HomeContainer/>
         </div>
        
-      <div className='grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3'>
+        <div className='grid grid-cols-1  md:grid-cols-3 lg:grid-cols-3'>
         {data.products.map((product)=> (
           <ProductItems product={product} key={product.slug}></ProductItems>
           ))}
@@ -31,13 +31,25 @@ export default function Home() {
       
           <Header/>
       <Services/>
+
+
+<Footer/>
       </>
       </Layout>
-<div>
-<Footer/>
-</div>
       
     </div>
     
   )
 }
+
+
+// export async function getServerSideProps() {
+
+//   const res = await fetch("https://fakestoreapi.com/products")
+//   const products = await res.json()
+//   return { 
+//     props: {
+//       products 
+//       } 
+//     }
+// }

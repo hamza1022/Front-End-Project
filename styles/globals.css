@@ -35,7 +35,7 @@ a {
 }
 
 .primary-button{
-  @apply rounded-lg bg-sky-400 py-2 px-4 shadow outline-none text-white active:bg-blue-500
+  @apply rounded-lg bg-sky-500 py-2 px-4 shadow outline-none text-white active:bg-blue-500
 }
 .default-button {
   @apply rounded bg-blue-400 py-2 px-4   shadow outline-none hover:bg-blue-500 active:bg-blue-500

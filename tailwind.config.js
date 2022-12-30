@@ -1,11 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./node_modules/flowbite-react/**/*.js",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  plugins: [
+    require("flowbite/plugin"),
+    
+  ],
+  plugins: [require("daisyui")],
   theme: {
     extend: {},
+  },
+  variants :{
+    extend:{
+      display : ['group-focus']
+    },
   },
   colors: {
     headingColor: "#2e2e2e",

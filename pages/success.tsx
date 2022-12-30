@@ -2,10 +2,13 @@ import React from 'react'
 import { AiFillCheckCircle } from 'react-icons/ai'
 import Layout from '../Components/layout'
 import Link from 'next/link'
+import Router from 'next/router'
 
 
 
 const Success = () => {
+
+  
 
 
 

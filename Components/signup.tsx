@@ -5,9 +5,13 @@ import Layout from './layout'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import { addUserInfo } from '../Store/UsersSlice'
+import { useDispatch } from '../Store/Store'
 
 
 const Signup = () => {
+  const dispatch = useDispatch();
+
 
 
   interface dataType {
@@ -41,11 +45,12 @@ const Signup = () => {
          })
         .then(function (response){
           if(response.status === 200){
+            dispatch(addUserInfo(data))
             router.push('/login')
           }
         })
         .catch(function (error){
-          console.log(error)
+          console.log(error.response.data.message)
         })
       }
   return (

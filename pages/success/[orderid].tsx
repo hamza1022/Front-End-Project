@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import { AiFillCheckCircle } from 'react-icons/ai'
 import Layout from '../../Components/layout'
 import { useRouter } from 'next/dist/client/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../Store/Store'
-import { saveConfirmOrders } from '../../Store/CartSlice'
+import { clearCart, saveConfirmOrders } from '../../Store/CartSlice'
 
 const Success = () => {
     const router = useRouter();
@@ -14,6 +14,8 @@ const Success = () => {
     const {orderid} = router.query;
 
     console.log("id",orderid)
+    
+    const cleanUp = useRef(false)
 
 
     
@@ -31,8 +33,15 @@ const Success = () => {
 
         if(myorders){
             
-            dispatch(saveConfirmOrders({purchaseItems: [...items], status :"Delivered", payment:myorders.paymentMethod , Address : shippingAddress, user :userName, orderID:orderid, Total:myorders.totalPrice }))
+            dispatch(saveConfirmOrders({purchaseItems: [...items], status :"Delivered", payment:myorders.paymentMethod , Address : shippingAddress, user :userName, orderID:orderid, TotalAmount:myorders.totalAmount }))
         }
+
+        router.push('/orderhistory')
+
+    
+        cleanUp.current== true;
+        return()=>{}
+       
         
 
         

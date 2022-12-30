@@ -125,7 +125,9 @@ const OrderHistory = () => {
             <li>
             <div className='mb-2 flex justify-between'>
             <div className='font-semibold'>Total Price</div>
-            <div>${viewOrder?.Total}</div>
+            <div>
+                ${viewOrder?.purchaseItems.reduce((a, c) => a + c.quantity * c.price, 0)}
+                </div>
     
             </div>
     
@@ -133,7 +135,7 @@ const OrderHistory = () => {
             <li>
             <div className='mb-2 flex justify-between'>
             <div  className='font-semibold'>Amount Paid</div>
-            <div>${viewOrder?.payment == "Stripe" ? viewOrder?.Total : 0 }</div>
+            <div>${viewOrder?.payment == "Stripe" ? viewOrder?.purchaseItems.reduce((a, c) => a + c.quantity * c.price, 0) : 0 }</div>
     
             </div>
     
@@ -141,7 +143,7 @@ const OrderHistory = () => {
             <li>
             <div className='mb-2 flex justify-between'>
             <div  className='font-semibold'>Balance</div>
-            <div>${viewOrder?.payment == "Payment was paid on Deleivery" ? viewOrder?.Total : 0 }</div>
+            <div>${viewOrder?.payment == "Payment was paid on Deleivery" ? viewOrder?.purchaseItems.reduce((a, c) => a + c.quantity * c.price, 0) : 0 }</div>
     
             </div>
     

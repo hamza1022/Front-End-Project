@@ -9,7 +9,7 @@ import { fetchPostJSON } from '../../utils/api-helpers'
 import Stripe from 'stripe';
 import getStripe from '../../utils/get-stripejs'
 import { useDispatch } from 'react-redux'
-import { saveConfirmOrders } from '../../Store/CartSlice'
+import { clearCart, saveConfirmOrders } from '../../Store/CartSlice'
 import { RootState } from '../../Store/Store'
 
 
@@ -36,8 +36,7 @@ const OrderScreen = () => {
     const {id} = router.query;
     console.log(router.query)
 
-    // const b = parseInt(id)
-    // console.log(typeof b)
+   
 
     const [myorders, setMyorders] = useState('')
     const [status, setStatus] = useState("Not Deleivered")
@@ -61,7 +60,7 @@ const OrderScreen = () => {
 
  useEffect(() => {
     console.log(id);
-    const myorders   = Orders.find((a)=>a.orderId == id)
+    const myorders= Orders.find((a)=>a.orderId == id)
     console.log(myorders);
     if(myorders?.paymentMethod === "CashOnDeleivery"){
         setPayment("Payment was paid on Deleivery")
@@ -80,8 +79,9 @@ const OrderScreen = () => {
 
   const confirmOrder =()=>{
 
-    dispatch(saveConfirmOrders({purchaseItems: [...items], status :"Delivered", payment:payment , Address : shippingAddress, user :userName, orderID: orderid, Total:myorders.totalPrice }))
-        router.push('/success')
+    dispatch(saveConfirmOrders({purchaseItems: [...items], status :"Delivered", payment:payment , Address : shippingAddress, user :userName, orderID: orderid, TotalAmount:myorders.totalAmount }))
+    dispatch(clearCart({}))
+    router.push('/success')
     
   }
 
@@ -111,13 +111,7 @@ const OrderScreen = () => {
     console.log("data", data)
     router.push(data.url)
     alert("messgae")
-    console.log("hello")
-
-    // if(data.url == "http://localhost:3000/success"){
-    //     dispatch(saveConfirmOrders({purchaseItems: [...items], status :"Delivered", payment:"Paid" ,Address : shippingAddress  , user :userName, orderID:myorders.orderId, Total:myorders.totalPrice }))
-    // }
-    
-  
+    console.log("hello")  
     }
  
   return (
@@ -204,7 +198,7 @@ const OrderScreen = () => {
         <li>
         <div className='mb-2 flex justify-between'>
         <div className='font-semibold'>Items</div>
-        <div>${myorders?.itemPrice}</div>
+        <div>${myorders?.totalAmount}</div>
 
         </div>
 
@@ -242,15 +236,7 @@ const OrderScreen = () => {
             :
             <button className='primary-button w-full mt-3 cursor-pointer'  disabled={loading} onClick={createCheckoutSession}>
                Pay Now
-            </button> 
-
-            // <button
-            //                                 disabled={loading}
-            //                                 onClick={checkOutSession}
-            //                                 className='primary-button w-full'>
-                                          
-
-            //                             </button>
+            </button>
 
 
       }
