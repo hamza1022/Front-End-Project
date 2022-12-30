@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import cookie from 'js-cookie';
 import { saveUserInfo  } from '../Store/CartSlice';
 import { useDispatch } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -68,11 +68,10 @@ const Login = () => {
     <label htmlFor="userName">User Name</label>
     <input type= "userName"
     {...register('userName', {required: "Please Enter Your User Name",
-    pattern  :{
-      
-      message:"Enter Valid User Name"
-
-    }
+    maxLength: {
+      value: 15,
+            message: "must be max 15 chars",
+          },
     })}
      className='w-full bg-white' id= "email" autoFocus /> 
      {errors.userName && <div className='text-red-500'>{errors.userName.message}</div>}

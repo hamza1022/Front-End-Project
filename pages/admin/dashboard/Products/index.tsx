@@ -2,13 +2,12 @@ import React from 'react'
 import Sidebar from '../../../../Components/sidebar'
 import {FaTrashAlt} from 'react-icons/fa'
 import {FaEdit} from 'react-icons/fa'
+import Image from 'next/image'
 
 import * as yup from 'yup'
 import { useFormik } from 'formik'
-import { Formik } from 'formik/dist/Formik'
 import { useDispatch, useSelector } from 'react-redux'
 import { addProduct , removeProduct } from '../../../../Store/ProductSlice'
-import { InputType } from 'zlib'
 import { RootState } from '../../../../Store/Store'
 import Link from 'next/link'
 const Products = () => {
@@ -137,9 +136,9 @@ const Products = () => {
 
                     return (
 
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <tr key={product.productId} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <td className="p-4 w-32">
-                            <img src="/docs/images/products/apple-watch.png" alt="Apple Watch"/>
+                            <Image src="/docs/images/products/apple-watch.png" alt="Apple Watch" width={30} height={30} />
                         </td>
                         <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
                             {product.productName}

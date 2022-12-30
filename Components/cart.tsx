@@ -1,16 +1,17 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import Layout from './layout'
 import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import { GiCancel } from 'react-icons/gi'
 import { useDispatch } from 'react-redux'
 import { removetocart } from '../Store/CartSlice'
-import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { parseCookies } from 'nookies'
 import { RootState } from '../Store/Store'
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+import Image from 'next/image'
+
 
 
 
@@ -99,13 +100,13 @@ const CartScreen = () => {
                                                             <Link href={`/products/${item.slug}`} legacyBehavior>
                                                                 <a className='flex items-center'>
 
-                                                                    <img
+                                                                    <Image
                                                                         src={item.img}
                                                                         alt={item.name}
                                                                         height={50}
 
-                                                                        width={50} >
-                                                                    </img>
+                                                                        width={50} 
+                                                                    />
                                                                     &nbsp;
                                                                     {item.name}
 

@@ -18,7 +18,7 @@ const Team = () => {
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-col text-center w-full mb-20">
       <h1 className="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">OUR TEAM</h1>
-      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+      <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably havent heard of them.</p>
     </div>
     <div className="flex flex-wrap -m-4">
       <div className="p-4 lg:w-1/2">
@@ -64,7 +64,7 @@ const Team = () => {
       </div>
       <div className="p-4 lg:w-1/2">
         <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://cdn.discordapp.com/attachments/1039128905442918410/1058268970328801361/Screenshot_20221230_110314.jpg"/>
+          <Image alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://cdn.discordapp.com/attachments/1039128905442918410/1058268970328801361/Screenshot_20221230_110314.jpg"/>
           <div className="flex-grow sm:pl-8">
             <h2 className="title-font font-medium text-lg text-gray-900">Sufyan Mumtaz </h2>
             <h3 className="text-gray-500 mb-3">Front End Developer</h3>
@@ -91,7 +91,7 @@ const Team = () => {
       </div>
       <div className="p-4 lg:w-1/2">
         <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://media.discordapp.net/attachments/1039128905442918410/1058268387094040576/Screenshot_20190728-150122.png?width=501&height=890"/>
+          <Image alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://media.discordapp.net/attachments/1039128905442918410/1058268387094040576/Screenshot_20190728-150122.png?width=501&height=890"/>
           <div className="flex-grow sm:pl-8">
             <h2 className="title-font font-medium text-lg text-gray-900">Daniyal Ahmad </h2>
             <h3 className="text-gray-500 mb-3">Front End Developer</h3>
@@ -131,7 +131,7 @@ const Team = () => {
            />
 
          </div>
-          {/* <img alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="blob:https://web.whatsapp.com/2f458618-5918-40d3-9b41-b786de74737d"/> */}
+          {/* <Image alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="blob:https://web.whatsapp.com/2f458618-5918-40d3-9b41-b786de74737d"/> */}
           <div className="flex-grow sm:pl-8">
             <h2 className="title-font font-medium text-lg text-gray-900">Qayyum Mughal </h2>
             <h3 className="text-gray-500 mb-3">Full Stack Developer</h3>

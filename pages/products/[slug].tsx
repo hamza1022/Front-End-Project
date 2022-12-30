@@ -1,11 +1,10 @@
 
 import Layout from '../../Components/layout'
-import Router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import data from '../../data';
-import Link from 'next/link'
 import Image from 'next/image'
 import { addtocart } from '../../Store/CartSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
@@ -108,7 +107,7 @@ const ProductScreen = () => {
           </button>
         </div>
       </div>
-      <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={product.img}/>
+      <Image alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={product.img}/>
     </div>
   </div>
 </section>

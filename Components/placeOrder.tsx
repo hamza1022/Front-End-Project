@@ -12,7 +12,7 @@ import { toast, ToastContainer } from 'react-toastify'
 
 
 
-const placeOrder = () => {
+const PlaceOrder = () => {
 
     const [loading, setLoading] = useState(false);
 
@@ -22,10 +22,12 @@ const placeOrder = () => {
     const totalQuantity = cartItems.length
     console.log("total" , totalQuantity)
        
-    const shippingAddress  = useSelector((state :RootState) => state.userCart.Address)  
+    const shippingAddress:addressType  = useSelector((state :RootState) => state.userCart.Address)  
     const payment = useSelector((state :RootState) => state.userCart.paymentMethod)
     const user = useSelector((state :RootState)=> state.userCart.UserInfo)
     const userName = user.userName;
+    console.log(userName)
+
 
     interface cartType {
         id : number,
@@ -251,4 +253,4 @@ const placeOrder = () => {
     )
 }
 
-export default Routes(placeOrder)
+export default Routes(PlaceOrder)

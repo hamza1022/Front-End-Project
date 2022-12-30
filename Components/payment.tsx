@@ -9,7 +9,7 @@ const Payment = () => {
   const router = useRouter();
   const [selectedPaymentMethod ,setSelectedPaymentMethod]= useState('');
 
-  const submitHandler=(e)=>{
+  const submitHandler=(e:any)=>{
     e.preventDefault();
     if(!selectedPaymentMethod){
       alert("payment method is required")

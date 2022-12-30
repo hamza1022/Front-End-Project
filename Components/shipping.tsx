@@ -10,7 +10,7 @@ import Link from 'next/link'
 import { parseCookies } from 'nookies'
 import Routes from '../Routes'
 import { RootState } from '../Store/Store'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -60,11 +60,10 @@ console.log(items)
             autoComplete='on'
               {...register("fullName", {
                 required: "Please Enter Your Full Name",
-                pattern: {
-
-                  message: "Enter Valid Name"
-
-                }
+                maxLength: {
+                  value: 15,
+                        message: "must be max 15 chars",
+                      },
               })}
               className='w-full bg-white' id="firstName" autoFocus />
             {errors.fullName && <div className='text-red-500'>{errors.fullName.message}</div>}
@@ -76,11 +75,10 @@ console.log(items)
             <input type="text"
               {...register("address", {
                 required: "Please Enter Your Address",
-                pattern: {
-
-                  message: "Enter Valid Address"
-
-                }
+                maxLength: {
+                  value: 15,
+                        message: "must be max 15 chars",
+                      },
               })}
               className='w-full bg-white' id="lastName" autoFocus />
             {errors.address && <div className='text-red-500'>{errors.address.message}</div>}
@@ -91,11 +89,10 @@ console.log(items)
             <input type="text"
               {...register("city", {
                 required: "Please Enter Your City",
-                pattern: {
-
-                  message: "Enter Valid City"
-
-                }
+                maxLength: {
+                  value: 15,
+                        message: "must be max 15 chars",
+                      },
               })}
               className='w-full bg-white' id="lastName" autoFocus />
             {errors.city && <div className='text-red-500'>{errors.city.message}</div>}
@@ -106,11 +103,10 @@ console.log(items)
             <input type="text"
               {...register("postalCode", {
                 required: "Please Enter Your Postal Code",
-                pattern: {
-
-                  message: "Enter Valid Postal Code"
-
-                }
+                maxLength: {
+                  value: 15,
+                        message: "must be max 15 chars",
+                      },
               })}
               className='w-full bg-white' id="email" autoFocus />
             {errors.postalCode && <div className='text-red-500'>{errors.postalCode.message}</div>}
@@ -121,11 +117,10 @@ console.log(items)
             <input type="text"
               {...register("phoneNumber", {
                 required: "Please Enter Your Phone Number",
-                pattern: {
-
-                  message: "Enter Valid phone Number"
-
-                }
+                maxLength: {
+                  value: 15,
+                        message: "must be max 15 chars",
+                      },
               })}
               className='w-full bg-white' id="phoneNumber" autoFocus />
             {errors.phoneNumber && <div className='text-red-500'>{errors.phoneNumber.message}</div>}
@@ -136,11 +131,10 @@ console.log(items)
             <input type="text"
               {...register("country", {
                 required: "Please Enter Your Country ",
-                pattern: {
-
-                  message: "Enter Valid Country "
-
-                }
+                maxLength: {
+                  value: 15,
+                        message: "must be max 15 chars",
+                      },
               })}
               className='w-full bg-white' id="phoneNumber" autoFocus />
             {errors.country && <div className='text-red-500'>{errors.country.message}</div>}

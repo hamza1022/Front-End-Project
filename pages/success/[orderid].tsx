@@ -1,10 +1,10 @@
-import React, { useEffect, useState,useRef } from 'react'
+import React, { useEffect,useRef } from 'react'
 import { AiFillCheckCircle } from 'react-icons/ai'
 import Layout from '../../Components/layout'
 import { useRouter } from 'next/dist/client/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../Store/Store'
-import { clearCart, saveConfirmOrders } from '../../Store/CartSlice'
+import { saveConfirmOrders } from '../../Store/CartSlice'
 
 const Success = () => {
     const router = useRouter();

@@ -4,9 +4,6 @@ import Layout from '../../Components/layout'
 import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import Image from 'next/image'
-import { loadStripe } from '@stripe/stripe-js';
-import { fetchPostJSON } from '../../utils/api-helpers'
-import Stripe from 'stripe';
 import getStripe from '../../utils/get-stripejs'
 import { useDispatch } from 'react-redux'
 import { clearCart, saveConfirmOrders } from '../../Store/CartSlice'
@@ -28,6 +25,7 @@ const OrderScreen = () => {
         price : number
 
     }
+   
 
     const dispatch = useDispatch()
 
@@ -38,13 +36,13 @@ const OrderScreen = () => {
 
    
 
-    const [myorders, setMyorders] = useState('')
+    const [myorders, setMyorders] = useState<any>("")
+
     const [status, setStatus] = useState("Not Deleivered")
     const [payment, setPayment] = useState("Payment was Required")
     const [loading, setLoading ] =useState(false)
 
  // ****** Fetch Id from the URL ************** 
-
     const Orders = useSelector((state:RootState)=>state.userCart.orderDetails)
     console.log('orders',Orders);
 
@@ -60,7 +58,7 @@ const OrderScreen = () => {
 
  useEffect(() => {
     console.log(id);
-    const myorders= Orders.find((a)=>a.orderId == id)
+    const myorders:any= Orders.find((a)=>a.orderId == id)
     console.log(myorders);
     if(myorders?.paymentMethod === "CashOnDeleivery"){
         setPayment("Payment was paid on Deleivery")
@@ -70,15 +68,18 @@ const OrderScreen = () => {
     setMyorders(myorders)
  },[id])
 
+
+
  
   console.log('myorders',myorders);
-  const orderid  = myorders.orderId
+  const orderid  = myorders?.orderId
   console.log(orderid)
 
 
 
   const confirmOrder =()=>{
 
+    setStatus("Delivered")
     dispatch(saveConfirmOrders({purchaseItems: [...items], status :"Delivered", payment:payment , Address : shippingAddress, user :userName, orderID: orderid, TotalAmount:myorders.totalAmount }))
     dispatch(clearCart({}))
     router.push('/success')
@@ -89,6 +90,7 @@ const OrderScreen = () => {
     console.log(myorders)
     setLoading(true)
     const stripe = await getStripe;
+    console.log(stripe)
     const response = await fetch("/api/checkout", {
         method: "POST",
         headers: {
@@ -97,13 +99,6 @@ const OrderScreen = () => {
         body: JSON.stringify(myorders)
     });
     console.log(response)
-
-
-    // if(response.status === 200){
-    //     dispatch(saveConfirmOrders({purchaseItems: [...items], status :"Delivered", payment:"Paid" ,Address : shippingAddress  , user :userName, orderID:myorders.orderId, Total:myorders.totalPrice }))
-    //     router.push('/success')
-        
-    // }
 
     if (response.status === 500) return;
 

@@ -1,6 +1,6 @@
 import Link from 'next/dist/client/link';
 import { useRouter } from 'next/dist/client/router';
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 import Layout from '../../Components/layout'
 import { RootState } from '../../Store/Store';
@@ -23,7 +23,7 @@ const OrderHistory = () => {
     const {orderId} = router.query
     const id = orderId?.toString();
 
-    const [payment , setPayment] = useState("")
+   
 
 
     // const id = type orderId + ""

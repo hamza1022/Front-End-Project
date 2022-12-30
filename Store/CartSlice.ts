@@ -46,6 +46,7 @@ type cartType = {
     taxPrice:number,
     status:string,
     totalPrice:number,
+    totalAmount:number,
     paymentMethod :string ,
     totalQuantity : number,
     orderItems : [
@@ -119,7 +120,8 @@ const initialState:initialStateType = {
 
     UserInfo:{
         userName :"",
-        password : ""
+        password : "",
+        Role:""
 
     },
     paymentMethod:"",
@@ -166,7 +168,8 @@ export const Cartslice = createSlice({
             logOut(state){
                 state.UserInfo={
                     userName:"",
-                    password:""
+                    password:"",
+                    Role:""
                 };
                 state.Address={
                     fullName : "",

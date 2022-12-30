@@ -62,11 +62,10 @@ const Signup = () => {
     <label htmlFor="email">First Name</label>
     <input type= "text"
     {...register("firstName", {required: "Please Enter Your First Name",
-    pattern:{
-     
-      message:"Enter Valid Name"
-
-    }
+    maxLength: {
+      value: 15,
+            message: "must be max 15 chars",
+          },
     })}
      className='w-full bg-white' id= "firstName" autoFocus /> 
      {errors.firstName && <div className='text-red-500'>{errors.firstName.message}</div>}
@@ -76,11 +75,10 @@ const Signup = () => {
     <label htmlFor="email">Last Name</label>
     <input  type= "text"
     {...register("lastName", {required: "Please Enter Your Last Name",
-    pattern:{
-     
-      message:"Enter Valid Last Name"
-
-    }
+    maxLength: {
+      value: 15,
+            message: "must be max 15 chars",
+          },
     })}
      className='w-full bg-white' id= "lastName" autoFocus /> 
      {errors.lastName && <div className='text-red-500'>{errors.lastName.message}</div>}
@@ -90,11 +88,10 @@ const Signup = () => {
     <label htmlFor="email">User Name</label>
     <input  type= "text"
     {...register("userName", {required: "Please Enter Your User Name",
-    pattern:{
-     
-      message:"Enter Valid User Name"
-
-    }
+    maxLength: {
+      value: 15,
+            message: "must be max 15 chars",
+          },
     })}
      className='w-full bg-white' id= "lastName" autoFocus /> 
      {errors.userName && <div className='text-red-500'>{errors.userName.message}</div>}
@@ -104,11 +101,10 @@ const Signup = () => {
     <label htmlFor="email">Email</label>
     <input type= "email"
     {...register("email", {required: "Please Enter Your Email",
-    pattern:{
-     
-      message:"Enter Valid Email Adress"
-
-    }
+    maxLength: {
+      value: 15,
+            message: "must be max 15 chars",
+          },
     })}
      className='w-full bg-white' id= "email" autoFocus /> 
      {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
@@ -118,11 +114,10 @@ const Signup = () => {
     <label htmlFor="email">Phone Number</label>
     <input   type= "text"
     {...register("phoneNumber", {required: "Please Enter Your Phone Number",
-    pattern:{
-     
-      message:"Enter Valid phone Number"
-
-    }
+    maxLength: {
+      value: 12,
+            message: "must be max 15 chars",
+          },
     })}
      className='w-full bg-white' id= "phoneNumber" autoFocus /> 
      {errors.phoneNumber && <div className='text-red-500'>{errors.phoneNumber.message}</div>}

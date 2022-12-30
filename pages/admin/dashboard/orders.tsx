@@ -3,12 +3,11 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../Store/Store'
 import Sidebar from '../../../Components/sidebar'
-import {FcCheckmark} from 'react-icons/fc'
 import {ImCross} from 'react-icons/im'
 import {BsCheckLg} from 'react-icons/bs'
 
 
-const orders = () => {
+const Orders = () => {
   
     const allOrders = useSelector((state:RootState)=>state.userCart.confirmOrders)
 
@@ -47,7 +46,7 @@ const orders = () => {
 
                 return (
 
-                    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <tr key={order.orderID} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td className="py-4 px-6 font-semibold text-gray-900 dark:text-white">
                         {order.orderID}
                     </td>
@@ -106,4 +105,4 @@ const orders = () => {
   )
 }
 
-export default orders
+export default Orders
