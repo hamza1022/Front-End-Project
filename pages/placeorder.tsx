@@ -1,5 +1,5 @@
 import React from 'react'
-import PlacedOrder from '../Components/PlaceOrder'
+import PlacedOrder from '../Components/placeOrder'
 
 const placeorderScreen = () => {
   return (

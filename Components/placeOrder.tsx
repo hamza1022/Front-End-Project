@@ -12,7 +12,7 @@ import { toast, ToastContainer } from 'react-toastify'
 
 
 
-const PlaceOrder = () => {
+const PlacedOrder = () => {
 
     const [loading, setLoading] = useState(false);
 
@@ -253,4 +253,4 @@ const PlaceOrder = () => {
     )
 }
 
-export default Routes(PlaceOrder)
+export default Routes(PlacedOrder)
