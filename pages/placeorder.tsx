@@ -1,10 +1,10 @@
 import React from 'react'
-import PlaceOrder from '../Components/PlaceOrder'
+import PlacedOrder from '../Components/PlaceOrder'
 
 const placeorderScreen = () => {
   return (
     <div>
-    <PlaceOrder/>
+    <PlacedOrder/>
     </div>
   )
 }
