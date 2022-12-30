@@ -18,6 +18,8 @@ const HomeContainer = () => {
           <div className="w-8 h-8 bg-white rounded-full overflow-hidden drop-shadow-xl">
             <Image
               src={Delivery}
+              width={30}
+              height={40}
               className="w-full h-full object-contain"
               alt="delivery"
             />
@@ -48,6 +50,8 @@ const HomeContainer = () => {
       <div className="py-2 flex-1 flex items-center relative">
         <Image
           src={Hero}
+          width={30}
+              height={40}
           className=" ml-[15rem] mt-9 h-full w-full lg:w-auto lg:h-650"
           alt="hero-bg"
         />
