@@ -107,7 +107,7 @@ const ProductScreen = () => {
           </button>
         </div>
       </div>
-      <Image alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={product.img}/>
+      <Image alt="ecommerce" width={300} height={300} className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={product.img}/>
     </div>
   </div>
 </section>

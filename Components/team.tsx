@@ -27,7 +27,7 @@ const Team = () => {
          <Image
            alt="team" 
            src={Pic}
-           className="rounded-lg w-48 h-55 object-cover object-center sm:mb-0 mb-4"
+           className="rounded-lg w-48 h-55 object-cover object-center sm:mb-0 mb-4" width={200} height={200}
          
           
            
@@ -64,7 +64,7 @@ const Team = () => {
       </div>
       <div className="p-4 lg:w-1/2">
         <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <Image alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://cdn.discordapp.com/attachments/1039128905442918410/1058268970328801361/Screenshot_20221230_110314.jpg"/>
+          <Image alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://cdn.discordapp.com/attachments/1039128905442918410/1058268970328801361/Screenshot_20221230_110314.jpg" width={200} height={200}/>
           <div className="flex-grow sm:pl-8">
             <h2 className="title-font font-medium text-lg text-gray-900">Sufyan Mumtaz </h2>
             <h3 className="text-gray-500 mb-3">Front End Developer</h3>
@@ -91,7 +91,7 @@ const Team = () => {
       </div>
       <div className="p-4 lg:w-1/2">
         <div className="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
-          <Image alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://media.discordapp.net/attachments/1039128905442918410/1058268387094040576/Screenshot_20190728-150122.png?width=501&height=890"/>
+          <Image alt="team" className="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://media.discordapp.net/attachments/1039128905442918410/1058268387094040576/Screenshot_20190728-150122.png?width=501&height=890" width={200} height={200}/>
           <div className="flex-grow sm:pl-8">
             <h2 className="title-font font-medium text-lg text-gray-900">Daniyal Ahmad </h2>
             <h3 className="text-gray-500 mb-3">Front End Developer</h3>
@@ -122,6 +122,7 @@ const Team = () => {
          <Image
            alt="team" 
            src={Qayum}
+           width={200} height={200}
            className="rounded-lg w-48 h-55 object-cover object-center sm:mb-0 mb-4"
          
           

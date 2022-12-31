@@ -45,7 +45,7 @@ const ProductItems = ({ product }:{product : productType}) => {
 
     <div className="relative max-w-sm min-w-[340px] bg-white shadow-md rounded-3xl p-2 mx-1 my-3 cursor-pointer">
       <div className="overflow-x-hidden rounded-2xl relative">
-        <Image alt = "" className="h-40 rounded-2xl w-full object-cover object-center " src={product.img}/>
+        <Image alt = "" className="h-40 rounded-2xl w-full object-cover object-center " src={product.img} width={200} height={200} />
         <p className="absolute right-2 top-2 bg-sky-300 rounded-full p-2 cursor-pointer group">
             <Link href= {`/products/${product.slug}`}>
             

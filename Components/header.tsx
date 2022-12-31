@@ -22,41 +22,41 @@ const Header = () => {
                                                         <div className="lg:w-40 w-64 h-40  overflow-hidden rounded-xl ">
                                                             <Image src="https://plus.unsplash.com/premium_photo-1661759370890-26ea261f5080?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80
                                     
-                                                            " alt="" className="" />
+                                                            " alt="" width={200} height={200} className="" />
                                                         </div>
                                                         <div className="flex flex-row lg:flex-col space-x-3 space-y-6 items-center justify-center">
                                                             <div className="w-32 lg:w-40 h-32  overflow-hidden rounded-xl ">
                                                                 <Image src="https://source.unsplash.com/random/300x500/?shirts
                                     
-                                                                "   alt="" className="" />
+                                                                "   width={200} height={200} alt="" className="" />
                                                             </div>
                                                             <div className="w-32 lg:w-40 h-48  overflow-hidden rounded-xl ">
                                                                 <Image src="https://source.unsplash.com/random/300x500/?pent
                                     
-                                                                "    alt="" className="" />
+                                                                "   width={200} height={200} alt="" className="" />
                                                             </div>
                                                         </div>
                                                         <div className="lg:w-60 w-64 h-96  overflow-hidden rounded-xl ">
                                                             <Image src="https://source.unsplash.com/random/300x500/?coats
                                     
-                                                            "    alt="" className="" />
+                                                            "    width={200} height={200} alt="" className="" />
                                                         </div>
                                                         <div className="flex flex-row lg:flex-col space-x-3 space-y-6 items-center justify-center ">
                                                             <div className="w-32 lg:w-40 h-48  overflow-hidden rounded-xl ">
                                                                 <Image src="https://source.unsplash.com/random/300x500/?houses
                                     
-                                                                "    alt="" className="" />
+                                                                "  width={200} height={200}   alt="" className="" />
                                                             </div>
                                                             <div className="w-32 lg:w-40 h-32  overflow-hidden rounded-xl ">
                                                                 <Image src="https://source.unsplash.com/random/300x500/?hills
                                     
-                                                                "    alt="" className="" />
+                                                                " width={200} height={200}   alt="" className="" />
                                                             </div>
                                                         </div>
                                                         <div className="lg:w-40 w-64 h-40  overflow-hidden rounded-xl ">
                                                             <Image src="https://source.unsplash.com/random/300x500/?shoes
                                     
-                                                            "    alt="" className="" />
+                                                            " width={200} height={200}   alt="" className="" />
                                                         </div>
                                     
                                     

@@ -18,7 +18,7 @@ import style from "../styles/slide.module.css"
           {slide.map((item, i) => (
             <div className={style.box} key={i}>
               <div className={style.img}>
-                <Image src={item.image} alt='' />
+                <Image src={item.image} alt='' width={200} height={200} />
               </div>
             </div>
           ))}

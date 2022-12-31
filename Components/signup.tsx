@@ -101,10 +101,10 @@ const Signup = () => {
     <label htmlFor="email">Email</label>
     <input type= "email"
     {...register("email", {required: "Please Enter Your Email",
-    maxLength: {
-      value: 15,
-            message: "must be max 15 chars",
-          },
+    pattern: {
+      value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+      message: 'Please enter valid email',
+    },
     })}
      className='w-full bg-white' id= "email" autoFocus /> 
      {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
@@ -116,7 +116,7 @@ const Signup = () => {
     {...register("phoneNumber", {required: "Please Enter Your Phone Number",
     maxLength: {
       value: 12,
-            message: "must be max 15 chars",
+            message: "must be max 12 chars",
           },
     })}
      className='w-full bg-white' id= "phoneNumber" autoFocus /> 
