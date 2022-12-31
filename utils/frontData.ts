@@ -1,7 +1,7 @@
-import I1 from "../public/images/gym.jpg";
-import F1 from "../public/images/gym.jpg";
-import C3 from "../public/images/gym.jpg";
-import Fi1 from "../public/images/gym.jpg";
+import I1 from "../public/images/shirt.jpg";
+import F1 from "../public/images/belt2.jpg";
+import C3 from "../public/images/socks22.jpg";
+import Fi1 from "../public/images/cap.jpg";
 
 export const heroData = [
   {
@@ -13,24 +13,25 @@ export const heroData = [
   },
   {
     id: 2,
-    name: "Belt",
-    decp: "A pure Leather Belt",
-    price: 1025,
-    imageSrc: F1,
-  },
-  {
-    id: 3,
     name: "Socks",
     decp: "Soft Fabric Socks",
     price: 85,
     imageSrc: C3,
   },
+
   {
-    id: 4,
+    id: 3,
     name: "Cap",
     decp: "A cap made for You",
     price: 525,
     imageSrc: Fi1,
+  },
+  {
+    id: 4,
+    name: "Belt",
+    decp: "A pure Leather Belt",
+    price: 1025,
+    imageSrc: F1,
   },
 ];
 

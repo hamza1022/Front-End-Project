@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Delivery from "../public/images/delivery.png";
-import Hero from "../public/images/hero.avif";
+import Hero from "../public/images/hero.jpg";
 import { heroData } from "../utils/frontData";
 
 const HomeContainer = () => {
